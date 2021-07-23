@@ -59,7 +59,7 @@
               Manage Users
             </a>
             <a
-              use:inertia={{ method: 'post' }}
+              use:inertia={{ method: 'delete' }}
               href={route('logout')}
               class="block px-6 py-2 hover:bg-indigo-500 hover:text-white">
               Logout

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ImagesController;
@@ -22,15 +22,15 @@ use Illuminate\Support\Facades\Route;
 
 // Auth
 
-Route::get('login', [LoginController::class, 'showLoginForm'])
+Route::get('login', [AuthenticatedSessionController::class, 'create'])
     ->name('login')
     ->middleware('guest');
 
-Route::post('login', [LoginController::class, 'login'])
-    ->name('login.attempt')
+Route::post('login', [AuthenticatedSessionController::class, 'store'])
+    ->name('login.store')
     ->middleware('guest');
 
-Route::post('logout', [LoginController::class, 'logout'])
+Route::delete('logout', [AuthenticatedSessionController::class, 'destroy'])
     ->name('logout');
 
 // Dashboard
@@ -137,15 +137,6 @@ Route::get('reports', [ReportsController::class, 'index'])
 
 // Images
 
-Route::get('/img/{path}', [ImagesController::class, 'show'])->where('path', '.*');
-
-// 500 error
-
-Route::get('500', function () {
-    // Force debug mode for this endpoint in the demo environment
-    if (App::environment('demo')) {
-        Config::set('app.debug', true);
-    }
-
-    echo $fail;
-});
+Route::get('/img/{path}', [ImagesController::class, 'show'])
+    ->where('path', '.*')
+    ->name('image');

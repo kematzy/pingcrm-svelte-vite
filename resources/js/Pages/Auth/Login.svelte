@@ -21,7 +21,7 @@
       remember: form.remember,
     }
 
-    Inertia.post(route('login.attempt'), data, {
+    Inertia.post(route('login.store'), data, {
       onStart: () => sending = true,
       onFinish: () => sending = false,
     })
