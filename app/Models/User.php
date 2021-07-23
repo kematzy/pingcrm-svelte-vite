@@ -18,7 +18,13 @@ class User extends Authenticatable
 
     protected $casts = [
         'owner' => 'boolean',
+        'email_verified_at' => 'datetime',
     ];
+
+    public function resolveRouteBinding($value, $field = null)
+    {
+        return $this->where($field ?? 'id', $value)->withTrashed()->firstOrFail();
+    }
 
     public function account()
     {
