@@ -29,7 +29,6 @@
     "cross-env": "^7.0.2",
     "eslint": "^7.30.0",
     "fit-textarea": "^3.0.0",
-    "laravel-mix": "^6.0.6",
     "nanoid": "^3.1.12",
     "prettier": "^2.3.2",
     "prettier-plugin-svelte": "^2.3.1",
