@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 use Inertia\Inertia;
 use League\Glide\Server;
@@ -25,9 +26,16 @@ class AppServiceProvider extends ServiceProvider
         $this->registerInertia();
         $this->registerGlide();
         $this->registerLengthAwarePaginator();
+        Model::unguard();
     }
 
     public function registerInertia()
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
     {
         Inertia::version(function () {
             return md5_file(public_path('mix-manifest.json'));
@@ -56,6 +64,7 @@ class AppServiceProvider extends ServiceProvider
                 ];
             },
         ]);
+        //
     }
 
     protected function registerGlide()
