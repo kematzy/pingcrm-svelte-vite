@@ -14,7 +14,7 @@
         "facade/ignition": "^2.3.6",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
-        "fzaninotto/faker": "^1.9.1",
+        "fakerphp/faker": "^1.9.1",
         "guzzlehttp/guzzle": "^7.0.1",
         "inertiajs/inertia-laravel": "^0.2",
         "laravel/framework": "^8.0",
