@@ -1,6 +1,13 @@
-# Ping CRM - Svelte
+# Ping CRM (Vue & Vite)
 
-A demo application to illustrate how Inertia.js works.
+A demo application to illustrate how [Inertia.js](https://inertiajs.com/) works together with [Svelte JS](https://svelte.dev/) and [Vite](https://vitejs.dev/), instead of the default [Webpack](https://webpack.js.org) and [Laravel Mix](https://laravel-mix.com) setup.
+
+A huge **Thank You!** goes out to [Sebastian De Deyne](https://github.com/sebastiandedeyne) because a lof of these changes are based upon his presentation [Laravel Worldwide Meetup #8: Using Vite in Laravel &hellip;](https://www.youtube.com/watch?v=wLwVr9ToNIs) hosted by [Freek Van der Herten](https://www.youtube.com/c/FreekVanderHerten/).
+
+I have created this version purely as an example for others to hopefully find through their search engine, so that they too can enjoy the development speed of this setup.
+
+<br>
+
 
 ![](https://raw.githubusercontent.com/inertiajs/pingcrm/master/screenshot.png)
 
@@ -9,8 +16,14 @@ A demo application to illustrate how Inertia.js works.
 Clone the repo locally:
 
 ```sh
-git clone https://github.com/inertiajs/pingcrm-svelte.git pingcrm-svelte
-cd pingcrm-svelte
+git clone https://github.com/kematzy/pingcrm-svelte-vite.git pingcrm-svelte-vite
+cd pingcrm-svelte-vite
+```
+
+and switch to the `vite-support` branch for the code changes.
+
+```sh
+git checkout vite-support
 ```
 
 Install PHP dependencies:
