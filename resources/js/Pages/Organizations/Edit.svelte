@@ -6,7 +6,6 @@
 <script>
   import { Inertia } from '@inertiajs/inertia'
   import { inertia, remember } from '@inertiajs/inertia-svelte'
-  import { route } from '@/Utils'
   import Icon from '@/Shared/Icon.svelte'
   import LoadingButton from '@/Shared/LoadingButton.svelte'
   import SelectInput from '@/Shared/SelectInput.svelte'
@@ -14,6 +13,8 @@
   import TrashedMessage from '@/Shared/TrashedMessage.svelte'
 
   export let errors = {}
+  const route = window.route
+
   export let organization = {}
 
   $: $title = organization ? organization.name : null
