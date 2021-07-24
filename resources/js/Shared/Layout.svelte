@@ -12,6 +12,8 @@
   import MainMenu from '@/Shared/MainMenu.svelte'
 
   const route = window.route
+
+  console.log('$page => ', $page)
 </script>
 
 <svelte:head>

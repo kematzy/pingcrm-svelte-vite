@@ -28,8 +28,14 @@
       class="mt-8 bg-white rounded-lg shadow-xl overflow-hidden"
       on:submit|preventDefault={submit}>
       <div class="px-10 py-12">
-        <h1 class="text-center font-bold text-3xl">Welcome Back!</h1>
-        <div class="mx-auto mt-6 w-24 border-b-2" />
+        <h1 class="text-3xl font-bold text-center text-indigo-600">Vite <em>'kind of works'</em> in Dev & Production modes! Welcome Back!</h1>
+
+        <p class="my-4 text-center text-red-600">Please see the notes in the <tt>resources/js/app.js</tt> file for more information.</p>
+        <h4><tt>$page</tt> output</h4>
+        <pre class="p-4 m-4 text-gray-500 bg-gray-200 border rounded">{JSON.stringify($page, null, 2)}</pre>
+
+        <div class="w-24 mx-auto mt-6 border-b-2" />
+
         <TextInput
           bind:value={$form.email}
           bind:error={$form.errors.email}
