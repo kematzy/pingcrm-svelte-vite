@@ -9,6 +9,7 @@ export default ({ command }) => ({
 
   build: {
     manifest: true,
+    target: 'es2018',
 
     outDir: 'public/build',
 
@@ -31,4 +32,11 @@ export default ({ command }) => ({
         /* inline options here */
     }),
   ],
+
+  optimizeDeps: {
+    include: [
+      '@inertiajs/inertia',
+      '@inertiajs/inertia-svelte',
+    ]
+  }
 })
