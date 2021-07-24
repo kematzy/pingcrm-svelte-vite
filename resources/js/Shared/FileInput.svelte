@@ -42,7 +42,7 @@
       <div class="p-2">
         <button
           type="button"
-          class="px-4 py-1 bg-gray-500 hover:bg-gray-700 rounded-sm text-xs font-medium text-white"
+          class="px-4 py-1 text-xs font-medium text-white bg-gray-500 rounded-sm hover:bg-gray-700"
           on:click={browse}>
           Browse
         </button>
@@ -51,11 +51,11 @@
       <div class="flex items-center justify-between p-2">
         <div class="flex-1 pr-1">
           {value.name}
-          <span class="text-gray-500 text-xs">({filesize(value.size)})</span>
+          <span class="text-xs text-gray-500">({filesize(value.size)})</span>
         </div>
         <button
           type="button"
-          class="px-4 py-1 bg-gray-500 hover:bg-gray-700 rounded-sm text-xs font-medium text-white"
+          class="px-4 py-1 text-xs font-medium text-white bg-gray-500 rounded-sm hover:bg-gray-700"
           on:click={remove}>
           Remove
         </button>

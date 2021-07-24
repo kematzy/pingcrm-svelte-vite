@@ -46,11 +46,11 @@
   }
 </script>
 
-<h1 class="mb-8 font-bold text-3xl">
+<h1 class="mb-8 text-3xl font-bold">
   <a use:inertia href={route('organizations')} class="text-indigo-400 hover:text-indigo-600">
     Organizations
   </a>
-  <span class="text-indigo-400 font-medium">/</span>
+  <span class="font-medium text-indigo-400">/</span>
   {organization.name}
 </h1>
 
@@ -60,43 +60,43 @@
   </TrashedMessage>
 {/if}
 
-<div class="bg-white rounded shadow overflow-hidden max-w-3xl">
+<div class="max-w-3xl overflow-hidden bg-white rounded shadow">
   <form on:submit|preventDefault={submit}>
-    <div class="p-8 -mr-6 -mb-8 flex flex-wrap">
+    <div class="flex flex-wrap p-8 -mb-8 -mr-6">
       <TextInput
         bind:value={$form.name}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.name}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Name:" />
       <TextInput
         bind:value={$form.email}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.email}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Email:" />
       <TextInput
         bind:value={$form.phone}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.phone}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Phone:" />
       <TextInput
         bind:value={$form.address}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.address}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Address:" />
       <TextInput
         bind:value={$form.city}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.city}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="City:" />
       <TextInput
         bind:value={$form.region}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.region}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Province/State:" />
       <SelectInput
         bind:value={$form.country}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.country}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Country:"
         let:selected>
         <option value={null} />
@@ -105,11 +105,11 @@
       </SelectInput>
       <TextInput
         bind:value={$form.postal_code}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.postal_code}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Postal code:" />
     </div>
-    <div class="px-8 py-4 bg-gray-100 border-t border-gray-200 flex items-center">
+    <div class="flex items-center px-8 py-4 bg-gray-100 border-t border-gray-200">
       {#if !organization.deleted_at}
         <button class="text-red-600 hover:underline" tabindex="-1" type="button" on:click={destroy}>
           Delete Organization
@@ -123,10 +123,10 @@
   </form>
 </div>
 
-<h2 class="mt-12 font-bold text-2xl">Contacts</h2>
-<div class="mt-6 bg-white rounded shadow overflow-x-auto">
+<h2 class="mt-12 text-2xl font-bold">Contacts</h2>
+<div class="mt-6 overflow-x-auto bg-white rounded shadow">
   <table class="w-full whitespace-no-wrap">
-    <tr class="text-left font-bold">
+    <tr class="font-bold text-left">
       <th class="px-6 pt-6 pb-4">Name</th>
       <th class="px-6 pt-6 pb-4">City</th>
       <th class="px-6 pt-6 pb-4" colspan="2">Phone</th>
@@ -137,10 +137,10 @@
           <a
             use:inertia
             href={route('contacts.edit', contact.id)}
-            class="px-6 py-4 flex items-center focus:text-indigo-500">
+            class="flex items-center px-6 py-4 focus:text-indigo-500">
             {contact.name}
             {#if contact.deleted_at}
-              <Icon name="trash" class="flex-shrink-0 w-3 h-3 fill-gray-400 ml-2" />
+              <Icon name="trash" class="flex-shrink-0 w-3 h-3 ml-2 fill-gray-400" />
             {/if}
           </a>
         </td>
@@ -148,7 +148,7 @@
           <a
             use:inertia
             href={route('contacts.edit', contact.id)}
-            class="px-6 py-4 flex items-center"
+            class="flex items-center px-6 py-4"
             tabindex="-1">
             {contact.city}
           </a>
@@ -157,16 +157,16 @@
           <a
             use:inertia
             href={route('contacts.edit', contact.id)}
-            class="px-6 py-4 flex items-center"
+            class="flex items-center px-6 py-4"
             tabindex="-1">
             {contact.phone}
           </a>
         </td>
-        <td class="border-t w-px">
+        <td class="w-px border-t">
           <a
             use:inertia
             href={route('contacts.edit', contact.id)}
-            class="px-4 flex items-center"
+            class="flex items-center px-4"
             tabindex="-1">
             <Icon name="cheveron-right" class="block w-6 h-6 fill-gray-400" />
           </a>
@@ -176,7 +176,7 @@
 
     {#if organization.contacts.length === 0}
       <tr>
-        <td class="border-t px-6 py-4" colspan="4">No contacts found.</td>
+        <td class="px-6 py-4 border-t" colspan="4">No contacts found.</td>
       </tr>
     {/if}
   </table>

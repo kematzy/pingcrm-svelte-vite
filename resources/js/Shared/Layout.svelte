@@ -21,26 +21,26 @@
 </svelte:head>
 
 <div class="flex flex-col">
-  <div class="h-screen flex flex-col">
-    <div class="md:flex flex-shrink-0">
-      <div class="bg-indigo-900 md:flex-shrink-0 md:w-56 px-6 py-4 flex items-center justify-between md:justify-center">
+  <div class="flex flex-col h-screen">
+    <div class="flex-shrink-0 md:flex">
+      <div class="flex items-center justify-between px-6 py-4 bg-indigo-900 md:flex-shrink-0 md:w-56 md:justify-center">
         <a use:inertia href="/" class="mt-1">
           <Logo class="fill-white" width="120" height="28" />
         </a>
         <Dropdown class="md:hidden" placement="bottom-end">
-          <svg class="fill-white w-6 h-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <svg class="w-6 h-6 fill-white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
           </svg>
-          <div slot="dropdown" class="mt-2 px-8 py-4 shadow-lg bg-indigo-800 rounded">
+          <div slot="dropdown" class="px-8 py-4 mt-2 bg-indigo-800 rounded shadow-lg">
             <MainMenu />
           </div>
         </Dropdown>
       </div>
-      <div class="bg-white border-b w-full p-4 md:py-0 md:px-12 text-sm md:text-md flex justify-between items-center">
+      <div class="flex items-center justify-between w-full p-4 text-sm bg-white border-b md:py-0 md:px-12 md:text-md">
         <div class="mt-1 mr-4">{$page.props.auth.user.account.name}</div>
         <Dropdown class="mt-1" placement="bottom-end">
           <div class="flex items-center cursor-pointer select-none group">
-            <div class="text-gray-700 group-hover:text-indigo-600 focus:text-indigo-600 mr-1 whitespace-no-wrap">
+            <div class="mr-1 text-gray-700 whitespace-no-wrap group-hover:text-indigo-600 focus:text-indigo-600">
               <span>{$page.props.auth.user.first_name}</span>
               <span class="hidden md:inline">{$page.props.auth.user.last_name}</span>
             </div>
@@ -48,7 +48,7 @@
               name="cheveron-down"
               class="w-5 h-5 group-hover:fill-indigo-600 fill-gray-700 focus:fill-indigo-600" />
           </div>
-          <div slot="dropdown" class="mt-2 py-2 shadow-xl bg-white rounded text-sm">
+          <div slot="dropdown" class="py-2 mt-2 text-sm bg-white rounded shadow-xl">
             <a
               use:inertia
               href={route('users.edit', $page.props.auth.user.id)}
@@ -72,8 +72,8 @@
       </div>
     </div>
     <div class="flex flex-grow overflow-hidden">
-      <MainMenu class="bg-indigo-800 flex-shrink-0 w-56 p-12 hidden md:block overflow-y-auto" />
-      <div class="flex-1 px-4 py-8 md:p-12 overflow-y-auto" scroll-region>
+      <MainMenu class="flex-shrink-0 hidden w-56 p-12 overflow-y-hidden bg-indigo-800 md:block" />
+      <div class="flex-1 px-4 py-8 overflow-y-auto md:p-12" scroll-region>
         <FlashMessages />
         <slot />
       </div>

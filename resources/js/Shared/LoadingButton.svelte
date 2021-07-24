@@ -9,7 +9,7 @@
 
 <button {...props} disabled={loading}>
   {#if loading}
-    <div class="btn-spinner mr-2" />
+    <div class="mr-2 btn-spinner" />
   {/if}
 
   <slot />

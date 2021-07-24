@@ -48,11 +48,11 @@
   }
 </script>
 
-<h1 class="mb-8 font-bold text-3xl">
+<h1 class="mb-8 text-3xl font-bold">
   <a use:inertia href={route('contacts')} class="text-indigo-400 hover:text-indigo-600">
     Contacts
   </a>
-  <span class="text-indigo-400 font-medium">/</span>
+  <span class="font-medium text-indigo-400">/</span>
   {contact.first_name}
   {contact.last_name}
 </h1>
@@ -61,23 +61,23 @@
     This contact has been deleted.
   </TrashedMessage>
 {/if}
-<div class="bg-white rounded shadow overflow-hidden max-w-3xl">
+<div class="max-w-3xl overflow-hidden bg-white rounded shadow">
   <form on:submit|preventDefault={submit}>
-    <div class="p-8 -mr-6 -mb-8 flex flex-wrap">
+    <div class="flex flex-wrap p-8 -mb-8 -mr-6">
       <TextInput
         bind:value={$form.first_name}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.first_name}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="First name:" />
       <TextInput
         bind:value={$form.last_name}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.last_name}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Last name:" />
       <SelectInput
         bind:value={$form.organization_id}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.organization_id}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Organization:"
         let:selected>
         <option value={null} />
@@ -89,33 +89,33 @@
       </SelectInput>
       <TextInput
         bind:value={$form.email}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.email}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Email:" />
       <TextInput
         bind:value={$form.phone}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.phone}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Phone:" />
       <TextInput
         bind:value={$form.address}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.address}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Address:" />
       <TextInput
         bind:value={$form.city}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.city}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="City:" />
       <TextInput
         bind:value={$form.region}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         label="Province/State:" />
         error={$form.errors.region}
+        class="w-full pb-8 pr-6 lg:w-1/2"
       <SelectInput
         bind:value={$form.country}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.country}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Country:"
         let:selected>
         <option value={null} />
@@ -124,11 +124,11 @@
       </SelectInput>
       <TextInput
         bind:value={$form.postal_code}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.postal_code}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Postal code:" />
     </div>
-    <div class="px-8 py-4 bg-gray-100 border-t border-gray-200 flex items-center">
+    <div class="flex items-center px-8 py-4 bg-gray-100 border-t border-gray-200">
       {#if !contact.deleted_at}
         <button class="text-red-600 hover:underline" tabindex="-1" type="button" on:click={destroy}>
           Delete Contact

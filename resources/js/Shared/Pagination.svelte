@@ -4,11 +4,11 @@
   export let links = []
 </script>
 
-<div class="mt-6 -mb-1 flex flex-wrap">
+<div class="flex flex-wrap mt-6 -mb-1">
   {#each links as link (link.label)}
     {#if link.url === null}
       <div
-        class="mr-1 mb-1 px-4 py-3 text-sm border rounded text-gray-400"
+        class="px-4 py-3 mb-1 mr-1 text-sm text-gray-400 border rounded"
         class:ml-auto={link.label === 'Next'}>
         {link.label}
       </div>

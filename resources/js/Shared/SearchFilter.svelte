@@ -45,14 +45,13 @@
 </script>
 
 <div {...props}>
-  <div class="flex w-full bg-white shadow rounded">
+  <div class="flex w-full bg-white rounded shadow">
     <Dropdown
-      class="px-4 md:px-6 rounded-l border-r hover:bg-gray-100 focus:border-white
-      focus:shadow-outline focus:z-10"
+      class="px-4 border-r rounded-l md:px-6 hover:bg-gray-100 focus:border-white focus:shadow-outline focus:z-10"
       placement="bottom-start"
       autoclose={false}>
       <div class="flex items-baseline">
-        <span class="text-gray-700 hidden md:inline">Filter</span>
+        <span class="hidden text-gray-700 md:inline">Filter</span>
         <svg
           class="w-2 h-2 fill-gray-700 md:ml-2"
           xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +63,7 @@
       </div>
       <div
         slot="dropdown"
-        class="mt-2 px-4 py-6 w-screen shadow-xl bg-white rounded"
+        class="w-screen px-4 py-6 mt-2 bg-white rounded shadow-xl"
         style="max-width: {maxWidth}px">
         <slot />
       </div>
