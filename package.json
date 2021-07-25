@@ -1,32 +1,33 @@
 {
-  "private": true,
-  "scripts": {
-    "dev": "vite",
-    "production": "vite build",
-    "serve": "vite preview",
-    "prettier": "prettier --write ./resources/js/**/*",
-    "heroku-postbuild": "npm run production"
-  },
-  "dependencies": {
-    "@inertiajs/inertia": "^0.9.2",
-    "@inertiajs/inertia-svelte": "^0.7.3",
-    "@inertiajs/progress": "^0.2.4",
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.14",
-    "autoprefixer": "^10.2.4",
-    "lodash": "^4.17.15",
-    "popper.js": "^1.16.0",
-    "postcss": "^8.3.6",
-    "postcss-import": "^14.0.1",
-    "postcss-nesting": "^8.0.1",
-    "svelte": "^3.40.0",
-    "tailwindcss": "^2.0.3",
-    "vite": "^2.4.3"
-  },
-  "devDependencies": {
-    "eslint": "^7.30.0",
-    "fit-textarea": "^3.0.0",
-    "nanoid": "^3.1.12",
-    "prettier": "^2.3.2",
-    "prettier-plugin-svelte": "^2.3.1"
-  }
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "production": "vite build",
+        "serve": "vite preview",
+        "prettier": "prettier --write ./resources/js/**/*",
+        "heroku-postbuild": "npm run production"
+    },
+    "dependencies": {
+        "@inertiajs/inertia": "^0.9.2",
+        "@inertiajs/inertia-svelte": "^0.7.3",
+        "@inertiajs/progress": "^0.2.4",
+        "@sveltejs/vite-plugin-svelte": "^1.0.0-next.14",
+        "autoprefixer": "^10.2.4",
+        "lodash": "^4.17.15",
+        "popper.js": "^1.16.0",
+        "postcss": "^8.3.6",
+        "postcss-import": "^14.0.1",
+        "postcss-nesting": "^8.0.1",
+        "svelte": "^3.40.0",
+        "tailwindcss": "^2.0.3",
+        "vite": "^2.4.3"
+    },
+    "devDependencies": {
+        "eslint": "^7.30.0",
+        "fit-textarea": "^3.0.0",
+        "nanoid": "^3.1.12",
+        "prettier": "^2.3.2",
+        "prettier-plugin-svelte": "^2.3.1"
+    }
 }
