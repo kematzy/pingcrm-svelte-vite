@@ -37,55 +37,60 @@
   }
 </script>
 
-<h1 class="mb-8 font-bold text-3xl">
+<h1 class="mb-8 text-3xl font-bold">
   <a use:inertia href={route('users')} class="text-indigo-400 hover:text-indigo-600">
     Users
   </a>
-  <span class="text-indigo-400 font-medium">/</span> Create
+  <span class="font-medium text-indigo-400">/</span> Create
 </h1>
 
-<div class="bg-white rounded shadow overflow-hidden max-w-3xl">
+<div class="max-w-3xl overflow-hidden bg-white rounded shadow">
   <form on:submit|preventDefault={submit}>
-    <div class="p-8 -mr-6 -mb-8 flex flex-wrap">
+    <div class="flex flex-wrap p-8 -mb-8 -mr-6">
       <TextInput
         bind:value={$form.first_name}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.first_name}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="First name:" />
+
       <TextInput
         bind:value={$form.last_name}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.last_name}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Last name:" />
+
       <TextInput
         bind:value={$form.email}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.email}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Email:" />
+
       <TextInput
         bind:value={$form.password}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.password}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         type="password"
         autocomplete="new-password"
         label="Password:" />
+
       <SelectInput
         bind:value={$form.owner}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.owner}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         label="Owner:">
         <option value={true}>Yes</option>
         <option value={false}>No</option>
       </SelectInput>
+
       <FileInput
         bind:value={$form.photo}
-        class="pr-6 pb-8 w-full lg:w-1/2"
         error={$form.errors.photo}
+        class="w-full pb-8 pr-6 lg:w-1/2"
         type="file"
         accept="image/*"
         label="Photo:" />
     </div>
-    <div class="px-8 py-4 bg-gray-100 border-t border-gray-200 flex justify-end items-center">
+    <div class="flex items-center justify-end px-8 py-4 bg-gray-100 border-t border-gray-200">
       <LoadingButton loading={$form.processing} class="btn-indigo" type="submit">Create User</LoadingButton>
     </div>
   </form>

@@ -11,7 +11,7 @@
 
 <div {...$$restProps}>
   <div class="mb-4">
-    <a use:inertia href={route('dashboard')} class="flex items-center group py-3">
+    <a use:inertia href={route('dashboard')} class="flex items-center py-3 group">
       <Icon
         name="dashboard"
         class="w-4 h-4 mr-2 {isUrl('/$') ? 'fill-white' : 'fill-indigo-400 group-hover:fill-white'}" />
@@ -21,7 +21,7 @@
     </a>
   </div>
   <div class="mb-4">
-    <a use:inertia href={route('organizations')} class="flex items-center group py-3">
+    <a use:inertia href={route('organizations')} class="flex items-center py-3 group">
       <Icon
         name="office"
         class="w-4 h-4 mr-2 {isUrl('/organizations/*') ? 'fill-white' : 'fill-indigo-400 group-hover:fill-white'}" />
@@ -31,7 +31,7 @@
     </a>
   </div>
   <div class="mb-4">
-    <a use:inertia href={route('contacts')} class="flex items-center group py-3">
+    <a use:inertia href={route('contacts')} class="flex items-center py-3 group">
       <Icon
         name="users"
         class="w-4 h-4 mr-2 {isUrl('/contacts/*') ? 'fill-white' : 'fill-indigo-400 group-hover:fill-white'}" />
@@ -41,7 +41,7 @@
     </a>
   </div>
   <div class="mb-4">
-    <a use:inertia href={route('reports')} class="flex items-center group py-3">
+    <a use:inertia href={route('reports')} class="flex items-center py-3 group">
       <Icon
         name="printer"
         class="w-4 h-4 mr-2 {isUrl('/reports/*') ? 'fill-white' : 'fill-indigo-400 group-hover:fill-white'}" />
