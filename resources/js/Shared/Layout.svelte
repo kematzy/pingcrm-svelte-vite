@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-  <title>{$title ? `${$title} - Ping CRM` : 'Ping CRM'}</title>
+  <title>{$title ? `${$title} - Ping CRM (Svelte & Vite)` : 'Ping CRM (Svelte & Vite'}</title>
 </svelte:head>
 
 <div class="flex flex-col">
