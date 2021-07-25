@@ -1,10 +1,11 @@
 <script>
   import { Inertia } from '@inertiajs/inertia'
   import { page } from '@inertiajs/inertia-svelte'
-  import { route } from '@/Utils'
   import pickBy from 'lodash/pickBy'
   import debounce from 'lodash/debounce'
   import Dropdown from '@/Shared/Dropdown.svelte'
+
+  const route = window.route
 
   export let filters = {}
   export let maxWidth = 300

@@ -1,7 +1,8 @@
 <script>
   import { inertia, page } from '@inertiajs/inertia-svelte'
-  import { route } from '@/Utils'
   import Icon from '@/Shared/Icon.svelte'
+
+  const route = window.route
 
   $: isUrl = (...urls) => {
     return urls.filter(url => $page.url.match(url)).length

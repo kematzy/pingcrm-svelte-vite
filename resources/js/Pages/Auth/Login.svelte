@@ -1,11 +1,11 @@
 <script>
   import { Inertia } from '@inertiajs/inertia'
-  import { route } from '@/Utils'
   import LoadingButton from '@/Shared/LoadingButton.svelte'
   import Logo from '@/Shared/Logo.svelte'
   import TextInput from '@/Shared/TextInput.svelte'
 
   export let errors = {}
+  const route = window.route
 
   let sending = false
   let form = {
