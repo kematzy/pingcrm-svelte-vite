@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-  <title>Login - Ping CRM</title>
+  <title>Login - Ping CRM (Svelte & Webpack/Mix)</title>
 </svelte:head>
 
 <div class="p-6 bg-indigo-800 min-h-screen flex justify-center items-center">

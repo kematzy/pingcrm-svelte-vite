@@ -9,7 +9,7 @@
   $title = 'Dashboard'
 </script>
 
-<h1 class="mb-8 text-3xl font-bold">Dashboard</h1>
+<h1 class="mb-8 text-3xl font-bold">Ping CRM <span class="text-gray-500">(Svelte & Webpack/Mix)</span> - Dashboard</h1>
 <p class="mb-8 leading-normal">
   Hey there! Welcome to Ping CRM, a demo app designed to help illustrate how <a
     class="text-indigo-500 underline hover:text-orange-600"
