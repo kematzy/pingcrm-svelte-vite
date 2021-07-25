@@ -5,22 +5,20 @@
 
 <script>
   import { Inertia } from '@inertiajs/inertia'
-  import { inertia, remember } from '@inertiajs/inertia-svelte'
+  import { inertia, useForm } from '@inertiajs/inertia-svelte'
   import Icon from '@/Shared/Icon.svelte'
   import LoadingButton from '@/Shared/LoadingButton.svelte'
   import SelectInput from '@/Shared/SelectInput.svelte'
   import TextInput from '@/Shared/TextInput.svelte'
   import TrashedMessage from '@/Shared/TrashedMessage.svelte'
 
-  export let errors = {}
   const route = window.route
 
   export let organization = {}
 
   $: $title = organization ? organization.name : null
 
-  let sending = false
-  let form = remember({
+  let form = useForm({
     name: organization.name,
     email: organization.email,
     phone: organization.phone,
@@ -32,10 +30,7 @@
   })
 
   function submit() {
-    Inertia.put(route('organizations.update', organization.id), $form, {
-      onStart: () => sending = true,
-      onFinish: () => sending = false,
-    })
+    $form.put(route('organizations.update', organization.id))
   }
 
   function destroy() {
@@ -70,38 +65,38 @@
     <div class="p-8 -mr-6 -mb-8 flex flex-wrap">
       <TextInput
         bind:value={$form.name}
-        error={errors.name}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.name}
         label="Name:" />
       <TextInput
         bind:value={$form.email}
-        error={errors.email}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.email}
         label="Email:" />
       <TextInput
         bind:value={$form.phone}
-        error={errors.phone}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.phone}
         label="Phone:" />
       <TextInput
         bind:value={$form.address}
-        error={errors.address}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.address}
         label="Address:" />
       <TextInput
         bind:value={$form.city}
-        error={errors.city}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.city}
         label="City:" />
       <TextInput
         bind:value={$form.region}
-        error={errors.region}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.region}
         label="Province/State:" />
       <SelectInput
         bind:value={$form.country}
-        error={errors.country}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.country}
         label="Country:"
         let:selected>
         <option value={null} />
@@ -110,8 +105,8 @@
       </SelectInput>
       <TextInput
         bind:value={$form.postal_code}
-        error={errors.postal_code}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.postal_code}
         label="Postal code:" />
     </div>
     <div class="px-8 py-4 bg-gray-100 border-t border-gray-200 flex items-center">
@@ -121,7 +116,7 @@
         </button>
       {/if}
 
-      <LoadingButton loading={sending} class="btn-indigo ml-auto" type="submit">
+      <LoadingButton loading={$form.processing} class="ml-auto btn-indigo" type="submit">
         Update Organization
       </LoadingButton>
     </div>

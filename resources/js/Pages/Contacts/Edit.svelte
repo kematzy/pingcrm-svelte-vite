@@ -5,7 +5,7 @@
 
 <script>
   import { Inertia } from '@inertiajs/inertia'
-  import { inertia, remember } from '@inertiajs/inertia-svelte'
+  import { inertia, useForm } from '@inertiajs/inertia-svelte'
   import LoadingButton from '@/Shared/LoadingButton.svelte'
   import SelectInput from '@/Shared/SelectInput.svelte'
   import TextInput from '@/Shared/TextInput.svelte'
@@ -14,13 +14,11 @@
   const route = window.route
 
   export let contact = {}
-  export let errors = {}
   export let organizations = []
 
   $: $title = contact ? `${contact.first_name} ${contact.last_name}` : null
 
-  let sending = false
-  let form = remember({
+  let form = useForm({
     first_name: contact.first_name,
     last_name: contact.last_name,
     organization_id: contact.organization_id,
@@ -34,10 +32,7 @@
   })
 
   function submit() {
-    Inertia.put(route('contacts.update', contact.id), $form, {
-      onStart: () => sending = true,
-      onFinish: () => sending = false,
-    })
+    $form.put(route('contacts.update', contact.id))
   }
 
   function destroy() {
@@ -71,18 +66,18 @@
     <div class="p-8 -mr-6 -mb-8 flex flex-wrap">
       <TextInput
         bind:value={$form.first_name}
-        error={errors.first_name}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.first_name}
         label="First name:" />
       <TextInput
         bind:value={$form.last_name}
-        error={errors.last_name}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.last_name}
         label="Last name:" />
       <SelectInput
         bind:value={$form.organization_id}
-        error={errors.organization_id}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.organization_id}
         label="Organization:"
         let:selected>
         <option value={null} />
@@ -94,33 +89,33 @@
       </SelectInput>
       <TextInput
         bind:value={$form.email}
-        error={errors.email}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.email}
         label="Email:" />
       <TextInput
         bind:value={$form.phone}
-        error={errors.phone}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.phone}
         label="Phone:" />
       <TextInput
         bind:value={$form.address}
-        error={errors.address}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.address}
         label="Address:" />
       <TextInput
         bind:value={$form.city}
-        error={errors.city}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.city}
         label="City:" />
       <TextInput
         bind:value={$form.region}
-        error={errors.region}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.region}
         label="Province/State:" />
       <SelectInput
         bind:value={$form.country}
-        error={errors.country}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.country}
         label="Country:"
         let:selected>
         <option value={null} />
@@ -129,8 +124,8 @@
       </SelectInput>
       <TextInput
         bind:value={$form.postal_code}
-        error={errors.postal_code}
         class="pr-6 pb-8 w-full lg:w-1/2"
+        error={$form.errors.postal_code}
         label="Postal code:" />
     </div>
     <div class="px-8 py-4 bg-gray-100 border-t border-gray-200 flex items-center">
@@ -139,7 +134,7 @@
           Delete Contact
         </button>
       {/if}
-      <LoadingButton loading={sending} class="btn-indigo ml-auto" type="submit">
+      <LoadingButton loading={$form.processing} class="ml-auto btn-indigo" type="submit">
         Update Contact
       </LoadingButton>
     </div>
