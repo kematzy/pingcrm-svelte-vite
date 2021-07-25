@@ -5,9 +5,10 @@
 
 <script>
   import { inertia, page } from '@inertiajs/inertia-svelte'
-  import { route } from '@/Utils'
   import Icon from '@/Shared/Icon.svelte'
   import SearchFilter from '@/Shared/SearchFilter.svelte'
+
+  const route = window.route
 
   export let users = []
 
