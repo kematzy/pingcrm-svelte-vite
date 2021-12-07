@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-  <title>Login - Ping CRM</title>
+  <title>Login - Ping CRM (Svelte &amp; Vite)</title>
 </svelte:head>
 
 <div class="flex items-center justify-center min-h-screen p-6 bg-indigo-800">
@@ -28,10 +28,18 @@
       class="mt-8 overflow-hidden bg-white rounded-lg shadow-xl"
       on:submit|preventDefault={submit}>
       <div class="px-10 py-12">
-        <h1 class="text-3xl font-bold text-center text-indigo-600">Vite <em>'kind of works'</em> in Dev & Production modes! Welcome Back!</h1>
 
-        <p class="my-4 text-center text-red-600">Please see the notes in the <tt>resources/js/app.js</tt> file for more information.</p>
-        <h4><tt>$page</tt> output</h4>
+        <h1 class="text-3xl font-light text-center text-indigo-600">
+          Vite works:
+          <br>- in <strong>Production</strong> mode
+          <br>- partly in <strong>Dev</strong> mode
+        </h1>
+
+        <p class="hidden my-4 text-center text-red-600">Please see the notes in the <tt>resources/js/app.js</tt> file for more information.</p>
+
+
+        <h4 class="mt-4 text-xl text-center"><code>$page</code> output</h4>
+
         <pre class="p-4 m-4 text-gray-500 bg-gray-200 border rounded">{JSON.stringify($page, null, 2)}</pre>
 
         <div class="w-24 mx-auto mt-6 border-b-2" />

@@ -26,10 +26,13 @@ createInertiaApp({
   // },
 
   resolve: (name) => withVite(import.meta.glob('./Pages/**/*.svelte'), name),   // [3]
-
   setup({ el, App, props }) {
+    //   console.log('props.initialPage: ', props.initialPage) // contains .initialPage object with all $page values
+    //   console.log('props.initialComponent: ', props.initialComponent) // contains .initialPage object with all $page values
     new App({ target: el, props })
-  }
+    // el.removeAttribute('data-page')  // remove unsightly HTML data output
+  },
+  // page: JSON.parse(document.getElementById('app').dataset.page)  // doesn't add anything
 })
 
 // DEBUGGING REFERENCE NOTES:

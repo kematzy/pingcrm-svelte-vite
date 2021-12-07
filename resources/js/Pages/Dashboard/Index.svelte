@@ -4,7 +4,7 @@
 </script>
 
 <script>
-  // import { inertia } from '@inertiajs/inertia-svelte'
+//   import { page } from '@inertiajs/inertia-svelte'
   // const route = window.route
 
   $title = 'Dashboard'
