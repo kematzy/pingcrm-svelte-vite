@@ -24,7 +24,7 @@
     last_name: user.last_name,
     email: user.email,
     password: user.password,
-    owner: user.owner,
+    owner: user.owner ? 'yes' : 'no',
     photo: null,
   })
 
@@ -35,7 +35,7 @@
           last_name: data.last_name || '',
           email: data.email || '',
           password: data.password || '',
-          owner: data.owner ? 1 : 0,
+          owner: data.owner === 'yes' ? true : false,
           photo: data.photo || ''
         })
       )
@@ -113,9 +113,9 @@
         error={$form.errors.owner}
         class="w-full pb-8 pr-6 lg:w-1/2"
         label="Owner:"
-        let:selected>
-        <option value={true} selected={selected === true}>Yes</option>
-        <option value={false} selected={selected === false}>No</option>
+      >
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
       </SelectInput>
 
       <FileInput

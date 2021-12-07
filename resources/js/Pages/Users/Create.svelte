@@ -19,7 +19,7 @@
     last_name: null,
     email: null,
     password: null,
-    owner: false,
+    owner: 'no', // false
     photo: null,
   })
 
@@ -30,7 +30,7 @@
         last_name: data.last_name || '',
         email: data.email || '',
         password: data.password || '',
-        owner: data.owner ? 1 : 0,
+        owner: data.owner === 'yes' ? true : false,
         photo: data.photo || ''
       }))
       .post(route('users.store'))
@@ -78,8 +78,8 @@
         error={$form.errors.owner}
         class="w-full pb-8 pr-6 lg:w-1/2"
         label="Owner:">
-        <option value={true}>Yes</option>
-        <option value={false}>No</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
       </SelectInput>
 
       <FileInput
