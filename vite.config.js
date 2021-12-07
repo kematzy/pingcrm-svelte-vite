@@ -29,7 +29,9 @@ export default ({ command }) => ({
 
   plugins: [
     svelte({
-        /* inline options here */
+      experimental: {
+        prebundleSvelteLibraries: true,
+      },
     }),
   ],
 
