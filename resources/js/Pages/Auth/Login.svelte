@@ -30,19 +30,10 @@
       <div class="px-10 py-12">
 
         <h1 class="text-3xl font-light text-center text-indigo-600">
-          Vite works:
-          <br>- in <strong>Production</strong> mode
-          <br>- partly in <strong>Dev</strong> mode
+          Welcome!
         </h1>
 
-        <p class="hidden my-4 text-center text-red-600">Please see the notes in the <tt>resources/js/app.js</tt> file for more information.</p>
-
-
-        <h4 class="mt-4 text-xl text-center"><code>$page</code> output</h4>
-
-        <pre class="p-4 m-4 text-gray-500 bg-gray-200 border rounded">{JSON.stringify($page, null, 2)}</pre>
-
-        <div class="w-24 mx-auto mt-6 border-b-2" />
+        <div class="w-4/5 mx-auto mt-6 border-b-2" />
 
         <TextInput
           bind:value={$form.email}
