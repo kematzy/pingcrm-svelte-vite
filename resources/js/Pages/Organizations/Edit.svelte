@@ -104,10 +104,10 @@
         error={$form.errors.country}
         class="w-full pb-8 pr-6 lg:w-1/2"
         label="Country:"
-        let:selected>
+      >
         <option value={null} />
-        <option value="CA" selected={selected === 'CA'}>Canada</option>
-        <option value="US" selected={selected === 'US'}>United States</option>
+        <option value="CA">Canada</option>
+        <option value="US">United States</option>
       </SelectInput>
 
       <TextInput
