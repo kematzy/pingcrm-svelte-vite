@@ -9,6 +9,10 @@
 </script>
 
 <div {...$$restProps}>
+  <div class="w-full mb-4 -mt-8">
+    <h3 class="mb-8 text-xl text-gray-100 opacity-70">Svelte & Vite</h3>
+  </div>
+
   <div class="mb-4">
     <a use:inertia href={route('dashboard')} class="flex items-center py-3 group">
       <Icon
