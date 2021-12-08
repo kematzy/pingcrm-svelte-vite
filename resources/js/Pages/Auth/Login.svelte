@@ -41,10 +41,9 @@
           class="mt-10"
           label="Email:"
           type="email"
-          autofocus
           autocapitalize="off" />
 
-        <TextInput bind:value={$form.password} class="mt-6" label="Password:" type="password" />
+        <TextInput bind:value={$form.password} bind:error={$form.errors.password} class="mt-6" label="Password:" type="password" />
 
         <label class="flex items-center mt-6 select-none" for="remember">
           <input id="remember" bind:checked={$form.remember} class="mr-1" type="checkbox" />
