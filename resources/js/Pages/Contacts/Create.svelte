@@ -61,7 +61,7 @@
         label="Organization:">
         <option value={null} />
         {#each organizations as organization (organization.id)}
-          <option value={organization.id}>{organization.name}</option>
+          <option value={String(organization.id)}>{organization.name}</option>
         {/each}
       </SelectInput>
 

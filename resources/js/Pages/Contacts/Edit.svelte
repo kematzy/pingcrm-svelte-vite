@@ -81,12 +81,10 @@
         error={$form.errors.organization_id}
         class="w-full pb-8 pr-6 lg:w-1/2"
         label="Organization:"
-        let:selected>
+      >
         <option value={null} />
         {#each organizations as organization (organization.id)}
-          <option value={organization.id} selected={selected == organization.id}>
-            {organization.name}
-          </option>
+          <option value={String(organization.id)}>{organization.name}</option>
         {/each}
       </SelectInput>
 
