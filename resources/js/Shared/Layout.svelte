@@ -13,7 +13,7 @@
 
   const route = window.route
 
-  console.log('$page => ', $page)
+  // console.log('$page => ', $page)
 </script>
 
 <svelte:head>
